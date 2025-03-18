@@ -1,0 +1,101 @@
+/* General page styling */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: black;
+    color: white;
+    overflow: hidden;
+    touch-action: manipulation;
+}
+
+/* Game container */
+.game-container {
+    position: relative;
+    width: 90vw;
+    height: 30vh;
+    max-width: 600px;
+    max-height: 200px;
+    border: 2px solid skyblue;
+    margin: auto;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 0px 0px 20px skyblue;
+}
+
+/* F1 car */
+.dino {
+    width: 10vw;
+    max-width: 60px;
+    height: 5vh;
+    max-height: 30px;
+    background: url('f1-car.png') no-repeat center/cover;
+    position: absolute;
+    bottom: 10px;
+    left: 10vw;
+}
+
+/* Obstacle */
+.obstacle {
+    width: 5vw;
+    max-width: 30px;
+    height: 10vh;
+    max-height: 50px;
+    background: url('building.png') no-repeat center/cover;
+    position: absolute;
+    bottom: 0;
+    right: -5vw;
+    animation: moveObstacle 2s linear infinite;
+}
+
+/* Coin */
+.coin {
+    width: 4vw;
+    max-width: 20px;
+    height: 4vw;
+    max-height: 20px;
+    background: url('coin.png') no-repeat center/cover;
+    position: absolute;
+    bottom: 60%;
+    left: 100%;
+    animation: moveCoin 3s linear infinite;
+}
+
+/* Obstacle movement */
+@keyframes moveObstacle {
+    from { right: 0; }
+    to { right: 100%; }
+}
+
+/* Coin movement */
+@keyframes moveCoin {
+    from { left: 100%; }
+    to { left: -5vw; }
+}
+
+/* Bouncing RGB Text */
+.bouncing-text {
+    position: absolute;
+    font-size: 2rem;
+    font-weight: bold;
+    user-select: none;
+    text-shadow: 0 0 10px white;
+    animation: rgbColor 2s infinite linear;
+}
+
+/* RGB color animation */
+@keyframes rgbColor {
+    0% { color: red; }
+    25% { color: blue; }
+    50% { color: green; }
+    75% { color: yellow; }
+    100% { color: red; }
+}
+
+/* Reward Message Below the Game */
+.reward-text {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: gold;
+    text-shadow: 0 0 5px white;
+}
