@@ -93,15 +93,20 @@ function stopGame() {
     gameRunning = false;
     obstacle.style.animation = "none"; // Stop obstacle animation
     coin.style.animation = "none"; // Stop coin animation
-    setTimeout(restartGame, 1000); // Restart game after 1 sec
+    document.getElementById("startAgainButton").style.display = "block"; // Show the Start Again button
+    setTimeout(() => {
+        alert("Game Over! Your Score: " + score);
+    }, 100); // Display Game Over after a short delay
 }
+
+document.getElementById("startAgainButton").addEventListener("click", restartGame);
 
 function restartGame() {
     score = 0;
     scoreDisplay.textContent = score;
     gameRunning = true;
 
-    // Reset F1 car position
+    // Reset Dino position
     dino.style.bottom = "10px";
 
     // Reset obstacle
@@ -111,20 +116,10 @@ function restartGame() {
     // Reset coin
     coin.style.left = "100%";
     coin.style.animation = "moveCoin 3s linear infinite";
+
+    // Hide the Start Again button
+    document.getElementById("startAgainButton").style.display = "none";
 }
-
-setInterval(() => {
-    if (gameRunning) {
-        checkCollision();
-        increaseScore();
-    }
-}, 100);
-
-const bouncingText = document.getElementById("bouncingText");
-
-let x = 100, y = 100; // Initial position
-let dx = 3, dy = 3; // Speed
-let screenWidth = window.innerWidth, screenHeight = window.innerHeight;
 
 // Update text position
 function moveText() {
