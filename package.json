@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "start": "servor --reload"
+  },
+  "dependencies": {
+    "servor": "^4.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^9.22.0"
+  }
+}

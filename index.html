@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Jump Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>LS is Cute!</h1>
+    <p>Tap to jump</p>
+    <h2>Score: <span id="score">0</span></h2>
+    <h2>High Score: <span id="highScore">0</span></h2>
+
+    <div class="bouncing-text" id="bouncingText">LS made this</div>
+
+    <div class="game-container" id="gameContainer">
+        <div class="dino" id="dino"></div>
+        <div class="obstacle" id="obstacle"></div>
+        <div class="coin" id="coin"></div>
+    </div>
+    
+    <div id="deathMessage" style="position: absolute; font-size: 30px; color: red; display: none;">You Died!</div>
+    
+    <!-- Add a Start Again Button -->
+    <button id="startAgainButton" onclick="restartGame()" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 10px 20px; font-size: 18px; background-color: #4CAF50; color: white; border: none; cursor: pointer;">
+        Start Again
+    </button>
+
+    <p class="reward-text">If you reach 11k, send me a pic, I'll libre you :D</p>
+    
+    <script src="script.js"></script>
+    <script src="highScore.js"></script>
+</body>
+</html>
